@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+
+:root {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Microsoft YaHei", sans-serif;
+  color: #eef7ff;
+  background: #071a3d;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pixel-grid {
+  background-image:
+    linear-gradient(rgba(64, 87, 116, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(64, 87, 116, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.anime-blue-bg {
+  background-image:
+    linear-gradient(rgba(186, 230, 253, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(186, 230, 253, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.anime-blue-bg::before,
+.anime-blue-bg::after {
+  position: absolute;
+  z-index: -1;
+  border-radius: 999px;
+  content: '';
+  filter: blur(6px);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.anime-blue-bg::before {
+  top: 120px;
+  right: 12%;
+  width: 190px;
+  height: 190px;
+  background: rgba(125, 211, 252, 0.36);
+}
+
+.anime-blue-bg::after {
+  bottom: 18%;
+  left: 8%;
+  width: 240px;
+  height: 240px;
+  background: rgba(59, 130, 246, 0.28);
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.1)),
+    rgba(14, 116, 144, 0.1);
+  box-shadow:
+    0 26px 70px rgba(2, 8, 23, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.45) inset;
+  backdrop-filter: blur(22px);
+}
+
+.glow-hover {
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.glow-hover:hover {
+  border-color: rgba(186, 230, 253, 0.7);
+  box-shadow:
+    0 30px 86px rgba(14, 165, 233, 0.28),
+    0 0 38px rgba(125, 211, 252, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.55) inset;
+  transform: translateY(-2px);
+}
+
+.glow-button {
+  box-shadow:
+    0 14px 32px rgba(14, 165, 233, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.32) inset;
+}
+
+.glow-button:hover {
+  box-shadow:
+    0 18px 44px rgba(56, 189, 248, 0.44),
+    0 0 24px rgba(125, 211, 252, 0.55),
+    0 1px 0 rgba(255, 255, 255, 0.42) inset;
+  transform: translateY(-1px);
+}
+
+.soft-outline {
+  box-shadow:
+    0 18px 50px rgba(66, 93, 126, 0.12),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.copy-flash {
+  animation: pop 180ms ease-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.96);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
